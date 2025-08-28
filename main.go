@@ -883,7 +883,7 @@ func loadDomainsFromFile(filename string) ([]DomainCategory, error) {
 
 		domain := parts[0]
 		category := CategoryOther // Default category
-		
+
 		if len(parts) > 1 {
 			switch strings.ToLower(parts[1]) {
 			case "general":
