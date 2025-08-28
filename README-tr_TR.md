@@ -51,44 +51,44 @@ dns-check-go
 
 ```bash
 # Özel DNS sunucuları dosyası belirtme
-go run . -dns-file ozel-sunucular.txt
-dns-check-go -dns-file ozel-sunucular.txt
+go run . --list ozel-sunucular.txt
+dns-check-go --list ozel-sunucular.txt
 
 # Özel alan adları dosyası belirtme
-go run . -domains-file ozel-alanlar.txt
-dns-check-go -domains-file ozel-alanlar.txt
+go run . --domains ozel-alanlar.txt
+dns-check-go --domains ozel-alanlar.txt
 
 # Çıktı formatını JSON olarak ayarlama
-go run . -format json
-dns-check-go -format json
+go run . --format json
+dns-check-go --format json
 
 # Zaman aşımı ve worker sayısını özelleştirme
-go run . -timeout 20 -workers 100
-dns-check-go -timeout 20 -workers 100
+go run . --timeout 20 --workers 100
+dns-check-go --timeout 20 --workers 100
 
 # Çıktıyı dosyaya kaydetme
-go run . -output sonuclar.txt
-dns-check-go -output sonuclar.txt
+go run . --output sonuclar.txt
+dns-check-go --output sonuclar.txt
 
 # Yardım gösterme
-go run . -help
-dns-check-go -help
+go run . --help
+dns-check-go --help
 
 # Birden fazla seçeneği birleştirme
-go run . -dns-file sunucular.txt -domains-file alanlar.txt -format json -timeout 10 -workers 75 -output sonuclar.json
-dns-check-go -dns-file sunucular.txt -domains-file alanlar.txt -format json -timeout 10 -workers 75 -output sonuclar.json
+go run . --list sunucular.txt --domains alanlar.txt --format json --timeout 10 --workers 75 --output sonuclar.json
+dns-check-go --list sunucular.txt --domains alanlar.txt --format json --timeout 10 --workers 75 --output sonuclar.json
 ```
 
 ## Komut Satırı Parametreleri
 
 | Parametre | Varsayılan | Açıklama |
 |-----------|------------|----------|
-| `-dns-file` | `dns-servers.txt` | DNS sunucuları liste dosyasının yolu |
-| `-domains-file` | `domains.txt` | Alan adları liste dosyasının yolu |
-| `-format` | `text` | Çıktı formatı (`text` veya `json`) |
-| `-timeout` | `15` | DNS sorgu zaman aşımı (saniye) |
-| `-workers` | `50` | Eşzamanlı worker sayısı |
-| `-output` | - | Çıktı dosyası yolu (isteğe bağlı, belirtilmezse stdout'a yazdırır) |
+| `--list` | Yerleşik DNS sunucuları | DNS sunucuları liste dosyasının yolu |
+| `--domains` | Yerleşik alan adları | Alan adları liste dosyasının yolu |
+| `--format` | `text` | Çıktı formatı (`text` veya `json`) |
+| `--timeout` | `15` | DNS sorgu zaman aşımı (saniye) |
+| `--workers` | `50` | Eşzamanlı worker sayısı |
+| `--output` | - | Çıktı dosyası yolu (isteğe bağlı, belirtilmezse stdout'a yazdırır) |
 
 ## Dosya Formatları
 
@@ -108,13 +108,13 @@ dns-check-go -dns-file sunucular.txt -domains-file alanlar.txt -format json -tim
 ```text
 # Format: ALAN_ADI KATEGORI
 # # ile başlayan satırlar yorumdur
-google.com General
-facebook.com General
-youtube.com General
-doubleclick.net Ad-server
-googlesyndication.com Ad-server
-yetiskin-site.xxx Adult
-bilinmeyen-kategori.com Other
+google.com general
+facebook.com general
+youtube.com general
+doubleclick.net ad-server
+googlesyndication.com ad-server
+yetiskin-site.xxx adult
+bilinmeyen-kategori.com other
 ```
 
 ## Alan Adı Kategorileri

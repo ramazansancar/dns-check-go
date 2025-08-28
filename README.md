@@ -51,44 +51,44 @@ dns-check-go
 
 ```bash
 # Specify custom DNS servers file
-go run . -dns-file custom-servers.txt
-dns-check-go -dns-file custom-servers.txt
+go run . --list custom-servers.txt
+dns-check-go --list custom-servers.txt
 
 # Specify custom domains file  
-go run . -domains-file custom-domains.txt
-dns-check-go -domains-file custom-domains.txt
+go run . --domains custom-domains.txt
+dns-check-go --domains custom-domains.txt
 
 # Set output format to JSON
-go run . -format json
-dns-check-go -format json
+go run . --format json
+dns-check-go --format json
 
 # Customize timeout and worker count
-go run . -timeout 20 -workers 100
-dns-check-go -timeout 20 -workers 100
+go run . --timeout 20 --workers 100
+dns-check-go --timeout 20 --workers 100
 
 # Save output to file
-go run . -output results.txt
-dns-check-go -output results.txt
+go run . --output results.txt
+dns-check-go --output results.txt
 
 # Show help
-go run . -help
-dns-check-go -help
+go run . --help
+dns-check-go --help
 
 # Combine multiple options
-go run . -dns-file servers.txt -domains-file domains.txt -format json -timeout 10 -workers 75 -output results.json
-dns-check-go -dns-file servers.txt -domains-file domains.txt -format json -timeout 10 -workers 75 -output results.json
+go run . --list servers.txt --domains domains.txt --format json --timeout 10 --workers 75 --output results.json
+dns-check-go --list servers.txt --domains domains.txt --format json --timeout 10 --workers 75 --output results.json
 ```
 
 ## Command Line Parameters
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `-dns-file` | `dns-servers.txt` | Path to DNS servers list file |
-| `-domains-file` | `domains.txt` | Path to domains list file |
-| `-format` | `text` | Output format (`text` or `json`) |
-| `-timeout` | `15` | DNS query timeout in seconds |
-| `-workers` | `50` | Number of concurrent workers |
-| `-output` | - | Output file path (optional, prints to stdout if not specified) |
+| `--list` | Built-in DNS servers | Path to DNS servers list file |
+| `--domains` | Built-in domains | Path to domains list file |
+| `--format` | `text` | Output format (`text` or `json`) |
+| `--timeout` | `15` | DNS query timeout in seconds |
+| `--workers` | `50` | Number of concurrent workers |
+| `--output` | - | Output file path (optional, prints to stdout if not specified) |
 
 ## File Formats
 
@@ -108,13 +108,13 @@ dns-check-go -dns-file servers.txt -domains-file domains.txt -format json -timeo
 ```txt
 # Format: DOMAIN CATEGORY
 # Lines starting with # are comments
-google.com General
-facebook.com General
-youtube.com General
-doubleclick.net Ad-server
-googlesyndication.com Ad-server
-adult-site.xxx Adult
-unknown-category.com Other
+google.com general
+facebook.com general
+youtube.com general
+doubleclick.net ad-server
+googlesyndication.com ad-server
+adult-site.xxx adult
+unknown-category.com other
 ```
 
 ## Domain Categories
@@ -134,6 +134,7 @@ Completed in 12.5s
 ```
 
 Progress bar features:
+
 - Visual progress indicator with Unicode blocks
 - Current/total test count
 - Percentage completion
@@ -264,10 +265,12 @@ go run . -dns-file dns-servers.txt -domains-file domains.txt
 1. **Test Your Changes**: Ensure your code works with various DNS servers and domain lists
 2. **Update Documentation**: Update README if you've added new features
 3. **Commit Your Changes**: Use descriptive commit messages
+
    ```bash
    git add .
    git commit -m "Add feature: DNS over HTTPS support"
    ```
+
 4. **Push to Your Fork**: `git push origin feature/your-feature-name`
 5. **Create Pull Request**: Submit a PR with detailed description of changes
 
@@ -296,7 +299,8 @@ If you encounter any issues or have questions:
 ### Issue Templates
 
 **Bug Report Example:**
-```
+
+```markdown
 **System Information:**
 - OS: Windows 11 / Ubuntu 22.04 / macOS 13
 - Go Version: 1.21.5

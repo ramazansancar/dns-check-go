@@ -21,6 +21,7 @@ go.work
 *.json
 *.txt
 !dns-servers.txt
+!domains.txt
 !README.md
 
 # IDE files

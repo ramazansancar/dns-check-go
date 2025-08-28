@@ -1,0 +1,49 @@
+# Domain list file for DNS testing
+# Format: DOMAIN CATEGORY
+# Categories: general, ad-server, adult, other
+# Lines starting with # are comments and will be ignored
+
+# General websites
+google.com general
+youtube.com general
+facebook.com general
+instagram.com general
+twitter.com general
+x.com general
+discord.com general
+github.com general
+stackoverflow.com general
+reddit.com general
+netflix.com general
+amazon.com general
+microsoft.com general
+apple.com general
+cloudflare.com general
+wikipedia.org general
+yandex.com general
+baidu.com general
+
+# Other services
+pastebin.com other
+roblox.com other
+
+# Adult content
+pornhub.com adult
+xvideos.com adult
+
+# Advertisement and tracking servers
+googleadservices.com ad-server
+googlesyndication.com ad-server
+googletagmanager.com ad-server
+doubleclick.net ad-server
+google-analytics.com ad-server
+adsystem.amazon.com ad-server
+amazon-adsystem.com ad-server
+connect.facebook.net ad-server
+ads.linkedin.com ad-server
+analytics.twitter.com ad-server
+ads.twitter.com ad-server
+ads.yahoo.com ad-server
+advertising.com ad-server
+adsystem.microsoft.com ad-server
+bat.bing.com ad-server
